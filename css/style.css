@@ -1,0 +1,114 @@
+/* ===== LTB Samui - Custom Styles ===== */
+
+/* --- Boat animation on itinerary timeline --- */
+@keyframes boatMove {
+  0%, 5% { left: 0%; }
+  20%, 35% { left: 28%; }
+  50%, 65% { left: 58%; }
+  80%, 95% { left: 88%; }
+  100% { left: 0%; }
+}
+
+/* --- Hero background pulse --- */
+@keyframes heroPulse {
+  0%, 100% { transform: scale(1.05); }
+  50% { transform: scale(1.1); }
+}
+
+/* --- Fade in --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.animate-boat-move {
+  animation: boatMove 8s ease-in-out infinite;
+}
+
+.animate-hero-pulse {
+  animation: heroPulse 20s ease-in-out infinite;
+}
+
+/* --- FAQ Accordion --- */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+  padding: 0 1.5rem;
+}
+
+.faq-item.open .faq-answer {
+  max-height: 500px;
+  padding: 0 1.5rem 1rem;
+}
+
+.faq-trigger svg {
+  transition: transform 0.3s ease;
+}
+
+.faq-item.open .faq-trigger svg {
+  transform: rotate(180deg);
+}
+
+/* --- Carousel --- */
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  flex-shrink: 0;
+}
+
+/* --- Sticky price bar --- */
+.sticky-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid #e5e7eb;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Form elements --- */
+select, input, textarea {
+  font-size: 16px; /* Prevents iOS zoom on focus */
+}
+
+/* Custom select styling */
+.custom-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 4l4 4 4-4'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 12px;
+  padding-right: 2.5rem;
+}
+
+/* --- Smooth scrolling --- */
+html {
+  scroll-behavior: smooth;
+}
+
+/* --- Focus styles for accessibility --- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Ensure body has enough bottom padding for sticky bar */
+body {
+  padding-bottom: 5rem;
+}
