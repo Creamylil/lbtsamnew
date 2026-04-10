@@ -57,6 +57,33 @@ const T = {
     openingWhatsapp: 'Ouverture de WhatsApp avec votre réservation !',
     guestSingular: 'voyageur',
     guestPlural: 'voyageurs'
+  },
+  es: {
+    forGuests: (n) => `para ${n} viajero${n > 1 ? 's' : ''}`,
+    withTransfer: 'con traslado al hotel',
+    withoutTransfer: 'sin traslado',
+    fillFields: 'Por favor, rellene todos los campos obligatorios.',
+    acceptTerms: 'Por favor, acepte los términos y condiciones.',
+    dateLocale: 'es-ES',
+    whatsappHeader: 'Nueva solicitud de reserva — Long Tail Boat Koh Samui',
+    whatsappDate: 'Fecha',
+    whatsappGuests: 'Viajeros',
+    whatsappTime: 'Hora',
+    whatsappTransferYes: 'Sí',
+    whatsappTransferNo: 'No (ir al embarcadero)',
+    whatsappHotelTransfer: 'Traslado hotel',
+    whatsappHotel: 'Hotel',
+    whatsappAddress: 'Dirección',
+    whatsappTotalPrice: 'Precio total',
+    whatsappBoat: 'barco',
+    whatsappTransfer: 'traslado',
+    whatsappName: 'Nombre',
+    whatsappEmail: 'Email',
+    whatsappPhone: 'Teléfono',
+    whatsappComments: 'Comentarios',
+    openingWhatsapp: '¡Abriendo WhatsApp con los detalles de su reserva!',
+    guestSingular: 'viajero',
+    guestPlural: 'viajeros'
   }
 };
 

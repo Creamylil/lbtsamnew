@@ -1,15 +1,15 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/weve4332/longtailboat-kohsamui.com/
-    - /bin/cp -R index.html $DEPLOYPATH
-    - /bin/cp -R terms-conditions.html $DEPLOYPATH
-    - /bin/cp -R sales-conditions.html $DEPLOYPATH
-    - /bin/cp -R legal-mentions.html $DEPLOYPATH
-    - /bin/cp -R sitemap.xml $DEPLOYPATH
-    - /bin/cp -R robots.txt $DEPLOYPATH
-    - /bin/cp -R css $DEPLOYPATH
-    - /bin/cp -R js $DEPLOYPATH
-    - /bin/cp -R images $DEPLOYPATH
-    - /bin/cp -R .htaccess $DEPLOYPATH
-    - /bin/cp -R fr $DEPLOYPATH
+    - /bin/cp -R index.html /home/weve4332/longtailboat-kohsamui.com/
+    - /bin/cp -R terms-conditions.html /home/weve4332/longtailboat-kohsamui.com/
+    - /bin/cp -R sales-conditions.html /home/weve4332/longtailboat-kohsamui.com/
+    - /bin/cp -R legal-mentions.html /home/weve4332/longtailboat-kohsamui.com/
+    - /bin/cp -R sitemap.xml /home/weve4332/longtailboat-kohsamui.com/
+    - /bin/cp -R robots.txt /home/weve4332/longtailboat-kohsamui.com/
+    - /bin/cp -R css /home/weve4332/longtailboat-kohsamui.com/
+    - /bin/cp -R js /home/weve4332/longtailboat-kohsamui.com/
+    - /bin/cp -R images /home/weve4332/longtailboat-kohsamui.com/
+    - /bin/cp -R .htaccess /home/weve4332/longtailboat-kohsamui.com/
+    - /bin/cp -R fr /home/weve4332/longtailboat-kohsamui.com/
+    - /bin/cp -R es /home/weve4332/longtailboat-kohsamui.com/

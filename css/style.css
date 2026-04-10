@@ -93,9 +93,10 @@ select, input, textarea {
   padding-right: 2.5rem;
 }
 
-/* --- Smooth scrolling --- */
+/* --- Smooth scrolling & prevent horizontal overflow on mobile --- */
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 /* --- Focus styles for accessibility --- */
@@ -111,4 +112,5 @@ textarea:focus-visible {
 /* Ensure body has enough bottom padding for sticky bar */
 body {
   padding-bottom: 5rem;
+  overflow-x: hidden;
 }
