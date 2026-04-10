@@ -115,6 +115,13 @@ body {
   overflow-x: hidden;
 }
 
+/* Fix focus ring clipping in form container */
+#booking-form-el input:focus,
+#booking-form-el select:focus,
+#booking-form-el textarea:focus {
+  --tw-ring-inset: inset;
+}
+
 /* --- Mobile form fixes --- */
 @media (max-width: 640px) {
   /* Reduce form padding on small screens */
