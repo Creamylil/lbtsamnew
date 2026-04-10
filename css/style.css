@@ -114,3 +114,19 @@ body {
   padding-bottom: 5rem;
   overflow-x: hidden;
 }
+
+/* --- Mobile form fixes --- */
+@media (max-width: 640px) {
+  /* Reduce form padding on small screens */
+  .form-body-padding {
+    padding: 1rem;
+  }
+
+  /* Phone country select: smaller on mobile */
+  .phone-country-select {
+    width: 100px;
+    font-size: 14px;
+    padding-left: 0.5rem;
+    padding-right: 1.5rem;
+  }
+}
