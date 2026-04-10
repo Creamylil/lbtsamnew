@@ -129,4 +129,30 @@ body {
     padding-left: 0.5rem;
     padding-right: 1.5rem;
   }
+
+  /* All form inputs must respect container width */
+  #booking-form-el input,
+  #booking-form-el select,
+  #booking-form-el textarea {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Form header badges: stack on mobile */
+  .form-body-padding .flex.justify-center.items-center.space-x-6 {
+    gap: 0.5rem;
+  }
+}
+
+/* Language widget menu animation */
+#lang-menu {
+  transform-origin: bottom left;
+}
+
+/* Close lang menu when clicking outside */
+@media (pointer: coarse) {
+  #lang-toggle:focus + #lang-menu,
+  #lang-menu:hover {
+    display: block;
+  }
 }

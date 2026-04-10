@@ -125,10 +125,6 @@
           <img src="images/6a900ce2-9e5b-422c-b9c0-b0b9ab4195c3.png" alt="Long Tail Boat Koh Samui Logo" class="w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40" width="160" height="160">
         </a>
       </div>
-      <div class="absolute top-6 right-6 flex gap-2">
-        <a href="/fr/" class="text-sm text-white/80 hover:text-white font-medium bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 transition-colors">FR 🇫🇷</a>
-        <a href="/es/" class="text-sm text-white/80 hover:text-white font-medium bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 transition-colors">ES 🇪🇸</a>
-      </div>
     </div>
   </header>
 
@@ -137,7 +133,7 @@
     <section class="relative min-h-[75vh] text-white overflow-hidden">
       <div class="absolute inset-0 bg-cover bg-center animate-hero-pulse" style="background-image: url('images/e60a3dd9-abf1-4543-b894-4e29e24097b5.png')"></div>
       <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70"></div>
-      <div class="relative z-10 flex items-center justify-center min-h-[75vh] pt-20 pb-12">
+      <div class="relative z-10 flex items-center justify-center min-h-[75vh] pt-32 sm:pt-20 pb-12">
         <div class="container mx-auto px-4 text-center">
           <h1 class="text-3xl md:text-5xl lg:text-7xl font-bold mb-3 animate-fade-in text-white drop-shadow-lg">
             <span class="block mb-2 md:mb-0 md:inline">Long Tail Boat</span>
@@ -481,9 +477,9 @@
 
             <!-- Form body -->
             <div class="p-4 sm:p-8 form-body-padding">
-              <form id="booking-form-el" class="space-y-8" novalidate>
+              <form id="booking-form-el" class="space-y-6 sm:space-y-8 max-w-full overflow-hidden" novalidate>
 
-                <div class="grid md:grid-cols-2 gap-6">
+                <div class="grid md:grid-cols-2 gap-4 sm:gap-6">
                   <!-- Number of guests -->
                   <div class="space-y-2">
                     <label for="people" class="text-lg font-semibold block">Number of guests *</label>
@@ -521,7 +517,7 @@
                   </div>
                 </div>
 
-                <div class="grid md:grid-cols-2 gap-6">
+                <div class="grid md:grid-cols-2 gap-4 sm:gap-6">
                   <!-- Pickup time WITH transfer -->
                   <div id="pickup-with-transfer" class="space-y-2 hidden">
                     <label for="pickupTime-transfer" class="text-lg font-semibold block">Preferred pickup time *</label>
@@ -1159,6 +1155,24 @@
       </div>
     </div>
   </div>
+
+  <!-- Language Switcher Widget -->
+  <div id="lang-widget" class="fixed bottom-20 left-4 z-50">
+    <div id="lang-menu" class="hidden mb-2 bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden">
+      <a href="/fr/" class="flex items-center gap-2 px-4 py-3 hover:bg-gray-50 transition-colors text-sm font-medium text-gray-700 border-b border-gray-100">
+        <span class="text-lg">🇫🇷</span> Français
+      </a>
+      <a href="/es/" class="flex items-center gap-2 px-4 py-3 hover:bg-gray-50 transition-colors text-sm font-medium text-gray-700">
+        <span class="text-lg">🇪🇸</span> Español
+      </a>
+    </div>
+    <button id="lang-toggle" onclick="document.getElementById('lang-menu').classList.toggle('hidden')" class="w-11 h-11 bg-white rounded-full shadow-lg border border-gray-200 flex items-center justify-center text-lg cursor-pointer hover:shadow-xl transition-shadow" aria-label="Change language">
+      🌐
+    </button>
+  </div>
+
+  <!-- Close lang menu on outside click -->
+  <script>document.addEventListener('click',function(e){if(!document.getElementById('lang-widget').contains(e.target)){document.getElementById('lang-menu').classList.add('hidden')}});</script>
 
   <!-- JavaScript -->
   <script src="js/booking.js"></script>
