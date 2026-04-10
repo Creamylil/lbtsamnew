@@ -1,5 +1,67 @@
 /* ===== LTB Samui - Booking & UI Logic ===== */
 
+// --- i18n ---
+const LANG = document.documentElement.lang?.substring(0, 2) || 'en';
+
+const T = {
+  en: {
+    forGuests: (n) => `for ${n} guest${n > 1 ? 's' : ''}`,
+    withTransfer: 'with hotel transfer',
+    withoutTransfer: 'without transfer',
+    fillFields: 'Please fill in all required fields.',
+    acceptTerms: 'Please accept the terms and conditions.',
+    dateLocale: 'en-US',
+    whatsappHeader: 'New Booking Request — Long Tail Boat Koh Samui',
+    whatsappDate: 'Date',
+    whatsappGuests: 'Guests',
+    whatsappTime: 'Time',
+    whatsappTransferYes: 'Yes',
+    whatsappTransferNo: 'No (going to pier)',
+    whatsappHotelTransfer: 'Hotel Transfer',
+    whatsappHotel: 'Hotel',
+    whatsappAddress: 'Address',
+    whatsappTotalPrice: 'Total Price',
+    whatsappBoat: 'boat',
+    whatsappTransfer: 'transfer',
+    whatsappName: 'Name',
+    whatsappEmail: 'Email',
+    whatsappPhone: 'Phone',
+    whatsappComments: 'Comments',
+    openingWhatsapp: 'Opening WhatsApp with your booking details!',
+    guestSingular: 'guest',
+    guestPlural: 'guests'
+  },
+  fr: {
+    forGuests: (n) => `pour ${n} voyageur${n > 1 ? 's' : ''}`,
+    withTransfer: 'avec transfert hôtel',
+    withoutTransfer: 'sans transfert',
+    fillFields: 'Veuillez remplir tous les champs obligatoires.',
+    acceptTerms: 'Veuillez accepter les conditions générales.',
+    dateLocale: 'fr-FR',
+    whatsappHeader: 'Nouvelle demande de réservation — Long Tail Boat Koh Samui',
+    whatsappDate: 'Date',
+    whatsappGuests: 'Voyageurs',
+    whatsappTime: 'Heure',
+    whatsappTransferYes: 'Oui',
+    whatsappTransferNo: 'Non (rendez-vous au pier)',
+    whatsappHotelTransfer: 'Transfert hôtel',
+    whatsappHotel: 'Hôtel',
+    whatsappAddress: 'Adresse',
+    whatsappTotalPrice: 'Prix total',
+    whatsappBoat: 'bateau',
+    whatsappTransfer: 'transfert',
+    whatsappName: 'Nom',
+    whatsappEmail: 'Email',
+    whatsappPhone: 'Téléphone',
+    whatsappComments: 'Commentaires',
+    openingWhatsapp: 'Ouverture de WhatsApp avec votre réservation !',
+    guestSingular: 'voyageur',
+    guestPlural: 'voyageurs'
+  }
+};
+
+const t = T[LANG] || T.en;
+
 // --- Pricing ---
 const TAXI_PRICE = 1600;
 const WHATSAPP_NUMBER = '33767028161';
@@ -75,7 +137,7 @@ function initBookingForm() {
 
     if (priceTotal) priceTotal.textContent = `\u0E3F${totalPrice.toLocaleString()} THB`;
     if (priceGuests) {
-      priceGuests.textContent = `for ${people} guest${people > 1 ? 's' : ''}${needsTransfer ? ' \u2014 with hotel transfer' : ' \u2014 without transfer'}`;
+      priceGuests.textContent = `${t.forGuests(people)} — ${needsTransfer ? t.withTransfer : t.withoutTransfer}`;
     }
     if (priceTransferLine) {
       priceTransferLine.classList.toggle('hidden', !needsTransfer);
@@ -115,54 +177,54 @@ function initBookingForm() {
 
     // Validate required fields
     if (!date || !name || !email || !phone || !phoneType || !pickupTime) {
-      showToast('Please fill in all required fields.', 'error');
+      showToast(t.fillFields, 'error');
       return;
     }
 
     if (!document.getElementById('terms')?.checked) {
-      showToast('Please accept the terms and conditions.', 'error');
+      showToast(t.acceptTerms, 'error');
       return;
     }
 
     // Format date nicely
     const dateObj = new Date(date + 'T00:00:00');
-    const formattedDate = dateObj.toLocaleDateString('en-US', {
+    const formattedDate = dateObj.toLocaleDateString(t.dateLocale, {
       weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
     });
 
     // Build WhatsApp message
-    let message = `\u{1F6A4} *New Booking Request \u2014 Long Tail Boat Koh Samui*\n\n`;
-    message += `\u{1F4C5} *Date:* ${formattedDate}\n`;
-    message += `\u{1F465} *Guests:* ${people}\n`;
-    message += `\u23F0 *Time:* ${pickupTime}\n`;
+    let message = `\u{1F6A4} *${t.whatsappHeader}*\n\n`;
+    message += `\u{1F4C5} *${t.whatsappDate}:* ${formattedDate}\n`;
+    message += `\u{1F465} *${t.whatsappGuests}:* ${people}\n`;
+    message += `\u23F0 *${t.whatsappTime}:* ${pickupTime}\n`;
 
     if (needsTransfer) {
-      message += `\u{1F3E8} *Hotel Transfer:* Yes\n`;
-      message += `\u{1F3E8} *Hotel:* ${hotelName}\n`;
-      message += `\u{1F4CD} *Address:* ${hotelAddress}\n`;
+      message += `\u{1F3E8} *${t.whatsappHotelTransfer}:* ${t.whatsappTransferYes}\n`;
+      message += `\u{1F3E8} *${t.whatsappHotel}:* ${hotelName}\n`;
+      message += `\u{1F4CD} *${t.whatsappAddress}:* ${hotelAddress}\n`;
     } else {
-      message += `\u{1F3E8} *Hotel Transfer:* No (going to pier)\n`;
+      message += `\u{1F3E8} *${t.whatsappHotelTransfer}:* ${t.whatsappTransferNo}\n`;
     }
 
-    message += `\n\u{1F4B0} *Total Price:* \u0E3F${totalPrice.toLocaleString()} THB`;
+    message += `\n\u{1F4B0} *${t.whatsappTotalPrice}:* \u0E3F${totalPrice.toLocaleString()} THB`;
     if (needsTransfer) {
-      message += ` (boat \u0E3F${boatPrice.toLocaleString()} + transfer \u0E3F${TAXI_PRICE.toLocaleString()})`;
+      message += ` (${t.whatsappBoat} \u0E3F${boatPrice.toLocaleString()} + ${t.whatsappTransfer} \u0E3F${TAXI_PRICE.toLocaleString()})`;
     }
     message += `\n`;
 
-    message += `\n\u{1F464} *Name:* ${name}\n`;
-    message += `\u{1F4E7} *Email:* ${email}\n`;
-    message += `\u{1F4F1} *Phone:* ${phoneCountry} ${phone} (${phoneType})\n`;
+    message += `\n\u{1F464} *${t.whatsappName}:* ${name}\n`;
+    message += `\u{1F4E7} *${t.whatsappEmail}:* ${email}\n`;
+    message += `\u{1F4F1} *${t.whatsappPhone}:* ${phoneCountry} ${phone} (${phoneType})\n`;
 
     if (comment.trim()) {
-      message += `\n\u{1F4AC} *Comments:* ${comment}\n`;
+      message += `\n\u{1F4AC} *${t.whatsappComments}:* ${comment}\n`;
     }
 
     // Open WhatsApp
     const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
 
-    showToast('Opening WhatsApp with your booking details!', 'success');
+    showToast(t.openingWhatsapp, 'success');
   });
 }
 
@@ -263,7 +325,7 @@ function initStickyBar() {
   function updateStickyDisplay() {
     guestCount.textContent = guests;
     stickyPrice.textContent = `\u0E3F${getBoatPrice(guests).toLocaleString()}`;
-    if (stickyLabel) stickyLabel.textContent = guests === 1 ? 'guest' : 'guests';
+    if (stickyLabel) stickyLabel.textContent = guests === 1 ? t.guestSingular : t.guestPlural;
   }
 
   minusBtn.addEventListener('click', () => {

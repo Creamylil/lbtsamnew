@@ -1,0 +1,14 @@
+# Language redirect based on Accept-Language header
+# Only redirect the root / to /fr/ for French browsers
+# Don't redirect if already on /fr/ or if a specific file is requested
+
+RewriteEngine On
+
+# Skip if already in /fr/ directory
+RewriteCond %{REQUEST_URI} ^/fr/ [NC]
+RewriteRule ^ - [L]
+
+# Redirect French-speaking browsers to /fr/ (only for homepage)
+RewriteCond %{REQUEST_URI} ^/$
+RewriteCond %{HTTP:Accept-Language} ^fr [NC]
+RewriteRule ^$ /fr/ [L,R=302]
