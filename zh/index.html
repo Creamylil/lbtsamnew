@@ -35,6 +35,10 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="../images/6a900ce2-9e5b-422c-b9c0-b0b9ab4195c3.png">
 
+  <!-- Performance: preconnect & preload -->
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+  <link rel="preload" as="image" type="image/webp" href="../images/hero-bg.webp">
+
   <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -125,7 +129,10 @@
     <div class="container mx-auto">
       <div class="flex justify-center md:justify-start">
         <a href="/zh/" aria-label="首页">
-          <img src="../images/6a900ce2-9e5b-422c-b9c0-b0b9ab4195c3.png" alt="Long Tail Boat Koh Samui Logo" class="w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40" width="160" height="160">
+          <picture>
+            <source srcset="../images/logo.webp" type="image/webp">
+            <img src="../images/6a900ce2-9e5b-422c-b9c0-b0b9ab4195c3.png" alt="Long Tail Boat Koh Samui Logo" class="w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40" width="160" height="160" loading="eager">
+          </picture>
         </a>
       </div>
     </div>
@@ -134,7 +141,7 @@
   <main>
     <!-- ===== HERO ===== -->
     <section class="relative min-h-[75vh] text-white overflow-hidden">
-      <div class="absolute inset-0 bg-cover bg-center animate-hero-pulse" style="background-image: url('../images/e60a3dd9-abf1-4543-b894-4e29e24097b5.png')"></div>
+      <div class="absolute inset-0 bg-cover bg-center animate-hero-pulse hero-bg"></div>
       <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70"></div>
       <div class="relative z-10 flex items-center justify-center min-h-[75vh] pt-32 sm:pt-20 pb-12">
         <div class="container mx-auto px-4 text-center">
@@ -239,22 +246,40 @@
         <div class="max-w-5xl mx-auto mt-10 relative overflow-hidden rounded-xl">
           <div id="carousel-track" class="carousel-track">
             <div class="carousel-slide">
-              <img src="../images/koh-Madsum-island-in-thailand.jpg" alt="猪岛天堂海滩" class="w-full h-[300px] md:h-[500px] object-cover" loading="lazy" width="1200" height="500">
+              <picture>
+                <source srcset="../images/koh-Madsum-island-in-thailand.webp" type="image/webp">
+                <img src="../images/koh-Madsum-island-in-thailand.jpg" alt="猪岛天堂海滩" class="w-full h-[300px] md:h-[500px] object-cover" loading="lazy" width="1200" height="500">
+              </picture>
             </div>
             <div class="carousel-slide">
-              <img src="../images/koh-Madsum-island-thailand.jpg" alt="猪岛热带天堂" class="w-full h-[300px] md:h-[500px] object-cover" loading="lazy" width="1200" height="500">
+              <picture>
+                <source srcset="../images/koh-Madsum-island-thailand.webp" type="image/webp">
+                <img src="../images/koh-Madsum-island-thailand.jpg" alt="猪岛热带天堂" class="w-full h-[300px] md:h-[500px] object-cover" loading="lazy" width="1200" height="500">
+              </picture>
             </div>
             <div class="carousel-slide">
-              <img src="../images/koh-samui-snorkeling.jpg" alt="苏梅岛珊瑚礁浮潜" class="w-full h-[300px] md:h-[500px] object-cover" loading="lazy" width="1200" height="500">
+              <picture>
+                <source srcset="../images/koh-samui-snorkeling.webp" type="image/webp">
+                <img src="../images/koh-samui-snorkeling.jpg" alt="苏梅岛珊瑚礁浮潜" class="w-full h-[300px] md:h-[500px] object-cover" loading="lazy" width="1200" height="500">
+              </picture>
             </div>
             <div class="carousel-slide">
-              <img src="../images/koh-tan-thailand.jpg" alt="龟岛隐秘海滩" class="w-full h-[300px] md:h-[500px] object-cover" loading="lazy" width="1200" height="500">
+              <picture>
+                <source srcset="../images/koh-tan-thailand.webp" type="image/webp">
+                <img src="../images/koh-tan-thailand.jpg" alt="龟岛隐秘海滩" class="w-full h-[300px] md:h-[500px] object-cover" loading="lazy" width="1200" height="500">
+              </picture>
             </div>
             <div class="carousel-slide">
-              <img src="../images/pig-island-koh-madsum-koh-samui.jpg" alt="苏梅岛猪岛游泳小猪" class="w-full h-[300px] md:h-[500px] object-cover" loading="lazy" width="1200" height="500">
+              <picture>
+                <source srcset="../images/pig-island-koh-madsum-koh-samui.webp" type="image/webp">
+                <img src="../images/pig-island-koh-madsum-koh-samui.jpg" alt="苏梅岛猪岛游泳小猪" class="w-full h-[300px] md:h-[500px] object-cover" loading="lazy" width="1200" height="500">
+              </picture>
             </div>
             <div class="carousel-slide">
-              <img src="../images/pig-island-koh-samui.jpg" alt="猪岛白色沙滩" class="w-full h-[300px] md:h-[500px] object-cover" loading="lazy" width="1200" height="500">
+              <picture>
+                <source srcset="../images/pig-island-koh-samui.webp" type="image/webp">
+                <img src="../images/pig-island-koh-samui.jpg" alt="猪岛白色沙滩" class="w-full h-[300px] md:h-[500px] object-cover" loading="lazy" width="1200" height="500">
+              </picture>
             </div>
           </div>
           <button id="carousel-prev" aria-label="上一张" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-md z-10 cursor-pointer">
@@ -921,7 +946,10 @@
       <div class="grid md:grid-cols-3 gap-8">
         <div>
           <div class="flex items-center mb-4">
-            <img src="../images/6a900ce2-9e5b-422c-b9c0-b0b9ab4195c3.png" alt="Long Tail Boat Koh Samui Logo" class="w-12 h-12 mr-3" width="48" height="48">
+            <picture>
+              <source srcset="../images/logo.webp" type="image/webp">
+              <img src="../images/6a900ce2-9e5b-422c-b9c0-b0b9ab4195c3.png" alt="Long Tail Boat Koh Samui Logo" class="w-12 h-12 mr-3" width="48" height="48" loading="lazy">
+            </picture>
             <h3 class="text-xl font-bold">Long Tail Boat Koh Samui</h3>
           </div>
           <p class="text-gray-300 leading-relaxed">

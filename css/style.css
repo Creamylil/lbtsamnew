@@ -33,6 +33,15 @@
   animation: heroPulse 20s ease-in-out infinite;
 }
 
+/* --- Hero background image (WebP with PNG fallback) --- */
+.hero-bg {
+  background-image: url('../images/hero-bg.webp');
+}
+
+.no-webp .hero-bg {
+  background-image: url('../images/e60a3dd9-abf1-4543-b894-4e29e24097b5.png');
+}
+
 /* --- FAQ Accordion --- */
 .faq-answer {
   max-height: 0;
