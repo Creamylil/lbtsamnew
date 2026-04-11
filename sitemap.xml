@@ -9,6 +9,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://longtailboat-kohsamui.com/fr/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://longtailboat-kohsamui.com/es/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://longtailboat-kohsamui.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://longtailboat-kohsamui.com/ru/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://longtailboat-kohsamui.com/"/>
     <lastmod>2026-04-11</lastmod>
     <changefreq>weekly</changefreq>
@@ -22,6 +23,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://longtailboat-kohsamui.com/fr/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://longtailboat-kohsamui.com/es/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://longtailboat-kohsamui.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://longtailboat-kohsamui.com/ru/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://longtailboat-kohsamui.com/"/>
     <lastmod>2026-04-11</lastmod>
     <changefreq>weekly</changefreq>
@@ -35,6 +37,7 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://longtailboat-kohsamui.com/fr/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://longtailboat-kohsamui.com/es/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://longtailboat-kohsamui.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://longtailboat-kohsamui.com/ru/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://longtailboat-kohsamui.com/"/>
     <lastmod>2026-04-11</lastmod>
     <changefreq>weekly</changefreq>
@@ -48,6 +51,21 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://longtailboat-kohsamui.com/fr/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://longtailboat-kohsamui.com/es/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://longtailboat-kohsamui.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://longtailboat-kohsamui.com/ru/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://longtailboat-kohsamui.com/"/>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Homepage RU -->
+  <url>
+    <loc>https://longtailboat-kohsamui.com/ru/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://longtailboat-kohsamui.com/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://longtailboat-kohsamui.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://longtailboat-kohsamui.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://longtailboat-kohsamui.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://longtailboat-kohsamui.com/ru/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://longtailboat-kohsamui.com/"/>
     <lastmod>2026-04-11</lastmod>
     <changefreq>weekly</changefreq>
