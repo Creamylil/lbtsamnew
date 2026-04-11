@@ -14,3 +14,4 @@ deployment:
     - /bin/cp -R fr /home/weve4332/longtailboat-kohsamui.com/
     - /bin/cp -R es /home/weve4332/longtailboat-kohsamui.com/
     - /bin/cp -R de /home/weve4332/longtailboat-kohsamui.com/
+    - /bin/cp -R ru /home/weve4332/longtailboat-kohsamui.com/
